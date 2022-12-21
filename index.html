@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* redo */
+var ball = document.createElement('div');
+ball.style.width = '100px';
+ball.style.height = '100px';
+ball.style.backgroundColor = 'red';
+ball.style.borderRadius = '50px';
+ball.style.position = 'absolute';
+ball.style.top = '50%';
+ball.style.left = '50%';
+ball.style.marginLeft = '-50px';
+ball.style.marginTop = '-50px';
+document.body.appendChild(ball);
+ball.addEventListener('click', function() {
+  var x = Math.random() * window.innerWidth;
+  var y = Math.random() * window.innerHeight;
+  ball.style.left = x + 'px';
+  ball.style.top = y + 'px';
+});
+ball.addEventListener('dblclick', function() {
+  ball.style.left = '50%';
+  ball.style.top = '50%';
+});
+ball.addEventListener('mouseover', function() {
+  ball.style.backgroundColor = 'black';
+});
+ball.addEventListener('mouseout', function() {
+  ball.style.backgroundColor = 'red';
+});
+var score = document.createElement('div');
+score.style.width = '100px';
+score.style.height = '50px';
+score.style.backgroundColor = 'black';
+score.style.color = 'white';
+score.style.position = 'absolute';
+score.style.top = '0px';
+score.style.left = '0px';
+score.innerHTML = 'Score: 0';
+document.body.appendChild(score);
+score.addEventListener('click', function() {
+  score.style.display = 'none';
+});
+score.addEventListener('mouseover', function() {
+  score.style.backgroundColor = 'white';
+});
+score.addEventListener('mouseout', function() {
+  score.style.backgroundColor = 'black';
+});
+score.addEventListener('mouseout', function() {
+  score.style.color = 'white';
+});
+score.addEventListener('mouseover', function() {
+  score.style.color = 'black';
+});
+document.body.style.backgroundColor = 'black';
+ball.addEventListener('mouseover', function() {
+  ball.style.backgroundColor = 'white';
+});
+ball.addEventListener('click', function() {
+  score.innerHTML = 'Score: ' + (parseInt(score.innerHTML.split(': ')[1]) + 1);
+});
+/* add a butten bottem left */
+var button = document.createElement('button');
+button.style.width = '100px';
+button.style.height = '50px';
+button.style.backgroundColor = 'black';
+button.style.color = 'white';
+button.style.position = 'absolute';
+button.style.bottom = '0px';
+button.style.left = '0px';
+button.innerHTML = 'Reset';
+document.body.appendChild(button);
+button.addEventListener('click', function() {
+  score.innerHTML = 'Score: 0';
+});
+button.addEventListener('mouseover', function() {
+  button.style.backgroundColor = 'white';
+});
+button.addEventListener('mouseout', function() {
+  button.style.backgroundColor = 'black';
+});
+button.addEventListener('mouseout', function() {
+  button.style.color = 'white';
+});
+button.addEventListener('mouseover', function() {
+  button.style.color = 'black';
+});
+    </script>
+</body>
+</html>
